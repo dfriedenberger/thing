@@ -13,8 +13,8 @@ if(process.argv.length == 2)
     console.log(" get-dad <did> <chain>                     - get dad document");
     console.log(" verify-did <did>                          - verify local document");
     console.log(" verify-dad <did> <chain>                  - verify local dad document");
-
     console.log(" send-file-enc <file> <chain> <enc-did>    - send file encrypted");
+    console.log(" recv-file-enc <did> <chain>               - recv file and decrypt");
     process.exit(0);
 }
 
@@ -58,9 +58,17 @@ switch(process.argv[2])
           dadUtils.sendFileEncrypted(process.argv[3],process.argv[4],process.argv[5]);
         }
         break;
+    case "recv-file-enc":
+        if(process.argv.length == 5)
+        {
+          dadUtils.recvFileEncrypted(process.argv[3],process.argv[4]);
+        }
+        break;
     default:
         console.log("unknown command:",process.argv[2]);
         break;
+
 }
+
 
 

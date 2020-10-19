@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/dfriedenberger/thing#readme",
   "dependencies": {
+    "base64-stream": "^1.0.0",
     "eckey-utils": "^0.7.13",
     "hdkey": "^2.0.1",
     "request": "^2.88.2"
