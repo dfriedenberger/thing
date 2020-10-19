@@ -1,0 +1,24 @@
+{
+  "name": "thing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "thing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfriedenberger/thing.git"
+  },
+  "author": "Dirk Friedenberger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dfriedenberger/thing/issues"
+  },
+  "homepage": "https://github.com/dfriedenberger/thing#readme",
+  "dependencies": {
+    "eckey-utils": "^0.7.13",
+    "hdkey": "^2.0.1",
+    "request": "^2.88.2"
+  }
+}

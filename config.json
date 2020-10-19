@@ -1,0 +1,5 @@
+{
+    "workingPath" : "tmp",
+    "credentialPath" : ".credentials",
+    "server" : "http://localhost:3000"
+}
