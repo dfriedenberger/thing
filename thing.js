@@ -15,6 +15,7 @@ if(process.argv.length == 2)
     console.log(" verify-dad <did> <chain>                  - verify local dad document");
     console.log(" send-file-enc <file> <chain> <enc-did>    - send file encrypted");
     console.log(" recv-file-enc <did> <chain>               - recv file and decrypt");
+    console.log(" send-file-chain <file> <prior-did> <prior-chain> <chain>");
     process.exit(0);
 }
 
@@ -56,6 +57,12 @@ switch(process.argv[2])
         if(process.argv.length == 6)
         {
           dadUtils.sendFileEncrypted(process.argv[3],process.argv[4],process.argv[5]);
+        }
+        break;
+    case "send-file-chain":
+        if(process.argv.length == 7)
+        {
+          dadUtils.sendFileChained(process.argv[3],process.argv[4],process.argv[5],process.argv[6]);
         }
         break;
     case "recv-file-enc":
