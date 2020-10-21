@@ -1,27 +1,31 @@
 {
-  "name": "thing",
+  "name": "@dfriedenberger/thing-lib",
   "version": "1.0.0",
-  "description": "",
-  "main": "thing.js",
+  "description": "Utils for Decentralized Autonomic Data",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dfriedenberger/thing.git"
   },
+  "keywords": [
+    "thing",
+    "dad",
+    "did"
+  ],
   "author": "Dirk Friedenberger",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dfriedenberger/thing/issues"
   },
   "homepage": "https://github.com/dfriedenberger/thing#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0"
+  },
   "dependencies": {
-    "@dfriedenberger/thing-lib": "file:packages/lib",
-    "base64-stream": "^1.0.0",
-    "eckey-utils": "^0.7.13",
-    "face-api.js": "^0.22.2",
-    "hdkey": "^2.0.1",
-    "request": "^2.88.2"
+    "hdkey": "^2.0.1"
   }
 }

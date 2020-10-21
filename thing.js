@@ -11,11 +11,9 @@ if(process.argv.length == 2)
     console.log(" lsdid                                     - list did");
     console.log(" get-did <did>                             - get document");
     console.log(" get-dad <did> <chain>                     - get dad document");
-    console.log(" verify-did <did>                          - verify local document");
-    console.log(" verify-dad <did> <chain>                  - verify local dad document");
-    console.log(" send-file-enc <file> <chain> <enc-did>    - send file encrypted");
+    console.log(" send-file-enc <chain> <enc-did> <file>     - send file encrypted");
     console.log(" recv-file-enc <did> <chain>               - recv file and decrypt");
-    console.log(" send-file-chain <file> <prior-did> <prior-chain> <chain>");
+    console.log(" send-file-chain <chain> <prior-did> <prior-chain> <file>");
     process.exit(0);
 }
 
@@ -32,13 +30,24 @@ switch(process.argv[2])
     case "get-did":
        if(process.argv.length == 4)
        {
-         dadUtils.getDID(process.argv[3]);
+         let did = process.argv[3];
+         dadUtils.getDID(did).then(() => {
+
+            //verify
+            dadUtils.verifyDID(did);
+            
+         });
        }
        break;
     case "get-dad":
         if(process.argv.length == 5)
         {
-          dadUtils.getDAD(process.argv[3],process.argv[4]);
+          var did = process.argv[3];
+          var chain = process.argv[4];
+          dadUtils.getDAD(did,chain).then(() => {
+            //verify
+            dadUtils.verifyDAD(did,chain);
+         });
         }
         break;
     case "verify-did":
@@ -50,13 +59,18 @@ switch(process.argv[2])
     case "verify-dad":
         if(process.argv.length == 5)
         {
-            dadUtils.verifyDAD(process.argv[3],process.argv[4]);
+          var did = process.argv[3];
+          var chain = process.argv[4];
+          dadUtils.verifyDAD(did,chain);
         }
         break;
     case "send-file-enc":
         if(process.argv.length == 6)
         {
-          dadUtils.sendFileEncrypted(process.argv[3],process.argv[4],process.argv[5]);
+          var chain = process.argv[3];
+          var encDid = process.argv[4];
+          var file = process.argv[5];
+          dadUtils.sendFileEncrypted(chain,encDid,file);
         }
         break;
     case "send-file-chain":
