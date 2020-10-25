@@ -1,6 +1,6 @@
 {
   "name": "@dfriedenberger/thing-lib",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Utils for Decentralized Autonomic Data",
   "main": "./src/index.js",
   "scripts": {

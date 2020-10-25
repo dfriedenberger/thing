@@ -11,7 +11,7 @@ if(process.argv.length == 2)
     console.log(" lsdid                                     - list did");
     console.log(" get-did <did>                             - get document");
     console.log(" get-dad <did> <chain>                     - get dad document");
-    console.log(" send-file-enc <chain> <enc-did> <file>     - send file encrypted");
+    console.log(" send-file-enc <chain> <enc-did> <file>    - send file encrypted");
     console.log(" recv-file-enc <did> <chain>               - recv file and decrypt");
     console.log(" send-file-chain <chain> <prior-did> <prior-chain> <file>");
     process.exit(0);
@@ -25,7 +25,10 @@ switch(process.argv[2])
         dadUtils.publishPublicKey();
         break;
     case "lsdid":
-        dadUtils.listDID();
+        {
+          var did = dadUtils.getDID();
+          console.log("did",did);
+        }
         break;
     case "get-did":
        if(process.argv.length == 4)
@@ -47,6 +50,8 @@ switch(process.argv[2])
           dadUtils.getDAD(did,chain).then(() => {
             //verify
             dadUtils.verifyDAD(did,chain);
+            dadUtils.recvFileEncrypted(did,chain);
+
          });
         }
         break;

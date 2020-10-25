@@ -46,3 +46,8 @@ service
   node thing.js send-file-chain tmp/processed.avi did:dad:A_i0BTbPlz8RHw8PpM2V262qTshJYN_V9vvmCNRT7Xk6 0/1 0/2711
 
   curl http://192.168.2.206:3000/files/processed.avi --output x.avi
+
+  python blurFaces.py tmp/bild.jpg tmp/bild-blur.jpg
+
+  
+ ffmpeg -i tmp/out.avi -f image2 tmp/filename%03d.jpg

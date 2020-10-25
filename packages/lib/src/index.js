@@ -6,6 +6,7 @@ const parseMessage = require("./parseMessage");
 const verifyDocument = require("./verifyDocument");
 const encryptFile = require("./encryptFile");
 const hashFile = require("./hashFile");
+const decryptFile = require("./decryptFile");
 
 module.exports = {
 
@@ -23,6 +24,8 @@ module.exports = {
 
   encryptFile,
 
-  hashFile
+  hashFile,
+
+  decryptFile
 
 };
