@@ -1,6 +1,6 @@
 {
   "name": "@dfriedenberger/thing-lib",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Utils for Decentralized Autonomic Data",
   "main": "./src/index.js",
   "scripts": {
@@ -26,6 +26,8 @@
     "mocha": "^8.2.0"
   },
   "dependencies": {
+    "base64-stream": "^1.0.0",
+    "eckey-utils": "^0.7.13",
     "hdkey": "^2.0.1"
   }
 }
