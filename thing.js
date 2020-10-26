@@ -26,7 +26,7 @@ switch(process.argv[2])
         break;
     case "lsdid":
         {
-          var did = dadUtils.getDID();
+          var did = dadUtils.getOwnDID();
           console.log("did",did);
         }
         break;
